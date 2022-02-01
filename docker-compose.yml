@@ -1,8 +1,10 @@
 version: '3.8'
 
 services:
-  db:
+  database:
     image: mysql:5.7
+    volumes:
+      - ./db_data:/var/lib/mysql
     ports:
       - 3306:3306
     environment:
@@ -19,7 +21,7 @@ services:
         PUID: ${PUID}
         PGID: ${PGID}
     depends_on:
-      - db
+      - database
     volumes:
       - .:/var/www/
 
