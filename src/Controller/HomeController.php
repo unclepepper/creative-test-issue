@@ -19,7 +19,8 @@ class HomeController
         private Environment $twig,
         private EntityManagerInterface $em
     ) {}
-
+    
+    #[Route('/', name: 'home')]
     public function index(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface
     {
         try {
