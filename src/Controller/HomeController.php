@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+
 use App\Entity\Movie;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -20,7 +21,7 @@ class HomeController
         private EntityManagerInterface $em
     ) {}
     
-    #[Route('/', name: 'home')]
+   
     public function index(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface
     {
         try {
@@ -38,8 +39,12 @@ class HomeController
 
     protected function fetchData(): Collection
     {
-        $data = $this->em->getRepository(Movie::class)
-            ->findAll();
+        $data = [
+            'name_controller' => 'HomeController',
+            'method_controller' => 'fetchData',
+        ];
+        // $data = $this->em->getRepository(Movie::class)
+        //     ->findAll();
 
         return new ArrayCollection($data);
     }
