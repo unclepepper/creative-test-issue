@@ -43,9 +43,7 @@ class HomeController
             'name_controller' => 'HomeController',
             'method_controller' => 'fetchData',
         ];
-        // $data = $this->em->getRepository(Movie::class)
-        //     ->findAll();
-
+        
         return new ArrayCollection($data);
     }
 }
