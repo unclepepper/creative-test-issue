@@ -1,6 +1,13 @@
 Тестовое задание для PHP-программиста
 =====================================
 
+### For run project:
+    - docker-compose up -d --build
+    - docker-compose exec app composer install
+
+### Не успел разобраться с БД    
+
+
 JUNIOR-уровень
 --------------
 
